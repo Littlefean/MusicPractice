@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "myChineseFont";
+  src: url("../font/字魂67号-勾玉行书.ttf");
+}
+@font-face {
+  font-family: "EnglishTitleFont";
+  src: url("../font/BRUX.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1e1e1e;
+  color: white;
+}
+body h1 {
+  text-align: center;
+  line-height: 2em;
+  color: #9cdcfe;
+  font-size: 40px;
+  font-family: myChineseFont, serif;
+  font-weight: lighter;
+}
+body main {
+  width: 90%;
+  margin: 0 auto;
+  outline: solid 1px;
+  padding-top: 20px;
+  padding-bottom: 200px;
+}
+body main .area .pianoKeyBoard {
+  outline: solid 1px;
+  height: 200px;
+  position: relative;
+  width: 600px;
+  background-color: wheat;
+  margin: 0 auto;
+}
+body main .area .pianoKeyBoard .pianoWhiteKey {
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  outline: solid 1px;
+  background-color: lightgray;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.2s;
+}
+body main .area .pianoKeyBoard .pianoBlackKey {
+  position: absolute;
+  height: 70%;
+  top: 0;
+  width: 40px;
+  outline: solid 1px;
+  background-color: #222;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: black -5px -2px 0 inset;
+  transition: all 0.2s;
+}
+body main .area .pianoKeyBoard .keyDown {
+  transform: scale(0.9);
+  background-color: gray;
+}
+body main .area .keyboard {
+  width: 600px;
+  height: 100px;
+  outline: solid 1px;
+  margin: 10px auto;
+}
+body main .area .keyboard .keyboardBlock {
+  width: 50px;
+  float: left;
+  text-align: center;
+  font-size: 26px;
+  line-height: 2em;
+  outline: solid 1px;
+  font-family: EnglishTitleFont, serif;
+  font-weight: lighter;
+  transition: all 0.2s;
+}
+body main .area .keyboard .keyboardDown {
+  transform: translateY(10px);
+}
+/*# sourceMappingURL=piano.css.map */
