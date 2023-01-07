@@ -1,4 +1,5 @@
 @import "font";
+@import "init";
 
 * {
   margin: 0;
@@ -6,6 +7,14 @@
   box-sizing: border-box;
 }
 
+.keyboardDown {
+  transform: translateY(10px);
+}
+
+.keyDown {
+  transform: scale(0.9);
+  background-color: gray !important;
+}
 
 body {
   background-color: #1e1e1e;
@@ -16,7 +25,7 @@ body {
     line-height: 2em;
     color: #9cdcfe;
     font-size: 40px;
-    .MyFont();
+    .EngFont();
 
   }
 
@@ -26,76 +35,84 @@ body {
     outline: solid 1px;
     padding-top: 20px;
     padding-bottom: 200px;
-
-    .area {
-      @areaWidth: 600px;
-      @whiteKeyWidth: 50px;
-
-      .pianoKeyBoard {
-        outline: solid 1px;
-        height: 200px;
-        position: relative;
-        width: @areaWidth;
-        background-color: wheat;
-        margin: 0 auto;
-
-        .pianoWhiteKey {
-          position: absolute;
-          height: 100%;
-          width: @whiteKeyWidth;
-          outline: solid 1px;
-          background-color: lightgray;
-
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          //transform-origin: top center;
-          transition: all 0.2s;
-        }
-
-        .pianoBlackKey {
-          @blackWidth: @whiteKeyWidth*0.8;
-          position: absolute;
-          height: 70%;
-          top: 0;
-          width: @blackWidth;
-          outline: solid 1px;
-          background-color: #222;
-
-          border-bottom-left-radius: 8px;
-          border-bottom-right-radius: 8px;
-          box-shadow: black -5px -2px 0 inset;
-          transition: all 0.2s;
-        }
-
-        .keyDown {
-          transform: scale(0.9);
-          background-color: gray;
-        }
-      }
-
-      .keyboard {
-        width: @areaWidth;
-        height: 100px;
-        outline: solid 1px;
-        margin: 10px auto;
-
-        .keyboardBlock {
-          width: @whiteKeyWidth;
-          float: left;
-          text-align: center;
-          font-size: 26px;
-          line-height: 2em;
-          outline: solid 1px;
-          .EngFont();
-
-          transition: all 0.2s;
-        }
-
-        .keyboardDown {
-          transform: translateY(10px);
-        }
-      }
+    .whiteKeyCss() {
+      outline: solid 1px dimgray;
+      background-color: lightgray;
     }
+    .blackKeyCss() {
+      outline: solid 1px dimgray;
+      background-color: #222;
+      box-shadow: black -5px -2px 0 inset;
+    }
+
+
+    .allKey {
+      @whiteKeyWidth: 20px;
+      @blackKeyWidth: @whiteKeyWidth*0.75;
+      @whiteKeyHeight: 60px;
+      @keyTop: 200px; // 上面留白距离
+
+      width: @whiteKeyWidth*49;
+      height: 500px;
+      margin: 10px auto;
+      outline: solid 1px;
+      position: relative;
+
+      .whiteKey {
+        width: @whiteKeyWidth;
+        height: @whiteKeyHeight;
+        position: absolute;
+        .whiteKeyCss();
+        transition: all 0.2s;
+
+        top: @keyTop;
+      }
+
+      .blackKey {
+        @w: @blackKeyWidth;
+        width: @w;
+        height: @whiteKeyHeight*0.6;
+        position: absolute;
+        margin-left: -(@w/2);
+        .blackKeyCss();
+
+        transition: all 0.2s;
+        top: @keyTop;
+      }
+
+      .leftHand, .rightHand {
+        position: absolute;
+        transition: all 0.2s;
+      }
+
+      .keyboardBlock {
+        width: @whiteKeyWidth;
+        float: left;
+        text-align: center;
+        font-size: 20px;
+        line-height: 2em;
+        outline: solid 1px;
+        .EngFont();
+
+        transition: all 0.2s;
+      }
+
+      .leftHand {
+        top: 270px;
+        left: 14*@whiteKeyWidth;
+
+      }
+
+      .rightHand {
+        left: 15*@whiteKeyWidth;
+        top: 330px;
+        //background-color: red;
+      }
+
+    }
+
 
   }
 }
+
+@import "pianoSettings";

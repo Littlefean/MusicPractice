@@ -9,28 +9,25 @@
     <link rel="stylesheet" href="../css/piano.css">
 </head>
 <body>
-<h1>钢琴键盘</h1>
+<h1>keyboard piano</h1>
 <main>
-    <div class="area">
-        <div class="pianoKeyBoard">
-            <div class="pianoWhiteKey keyCode-KeyA"></div>
-            <div class="pianoWhiteKey keyCode-KeyS"></div>
-            <div class="pianoWhiteKey keyCode-KeyD"></div>
-            <div class="pianoWhiteKey keyCode-KeyF"></div>
-            <div class="pianoWhiteKey keyCode-KeyG"></div>
-            <div class="pianoWhiteKey keyCode-KeyH"></div>
-            <div class="pianoWhiteKey keyCode-KeyJ"></div>
-            <div class="pianoWhiteKey keyCode-KeyK"></div>
-            <div class="pianoWhiteKey keyCode-KeyL"></div>
-            <div class="pianoWhiteKey keyCode-Semicolon"></div>
-            <div class="pianoWhiteKey keyCode-Quote"></div>
-            <div class="pianoBlackKey"></div>
-            <div class="pianoBlackKey"></div>
-            <div class="pianoBlackKey"></div>
-            <div class="pianoBlackKey"></div>
-            <div class="pianoBlackKey"></div>
+    <!--展示所有键-->
+    <div class="allKey">
+        <div class="leftHand">
+            <div class="keyboardBlock keyCode-KeyQ">q</div>
+            <div class="keyboardBlock keyCode-KeyW">w</div>
+            <div class="keyboardBlock keyCode-KeyE">e</div>
+            <div class="keyboardBlock keyCode-KeyR">r</div>
+            <div class="keyboardBlock keyCode-KeyT">t</div>
+            <div class="keyboardBlock keyCode-KeyY">y</div>
+            <div class="keyboardBlock keyCode-KeyU">u</div>
+            <div class="keyboardBlock keyCode-KeyI">i</div>
+            <div class="keyboardBlock keyCode-KeyO">o</div>
+            <div class="keyboardBlock keyCode-KeyP">p</div>
+            <div class="keyboardBlock keyCode-BracketLeft">[</div>
+            <div class="keyboardBlock keyCode-BracketRight">]</div>
         </div>
-        <div class="keyboard">
+        <div class="rightHand">
             <div class="keyboardBlock keyCode-KeyA">A</div>
             <div class="keyboardBlock keyCode-KeyS">S</div>
             <div class="keyboardBlock keyCode-KeyD">D</div>
@@ -44,7 +41,51 @@
             <div class="keyboardBlock keyCode-Quote">'</div>
         </div>
     </div>
+    <div class="settings">
+        调式：
+        <select name="" id="mode">
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="B">B</option>
+        </select>
+        <div class="leftHand">
+            <input type="text" maxlength="1" class="fingerKeyInput f1">
+            <input type="text" maxlength="1" class="fingerKeyInput f2">
+            <input type="text" maxlength="1" class="fingerKeyInput f3">
+            <input type="text" maxlength="1" class="fingerKeyInput f4">
+            <input type="text" maxlength="1" class="fingerKeyInput f5">
+            <input type="text" maxlength="1" class="fingerKeyInput f6">
+            <input type="text" maxlength="1" class="fingerKeyInput f7">
+            <input type="text" maxlength="1" class="fingerKeyInput f8">
+            <input type="text" maxlength="1" class="fingerKeyInput f9">
+            <img src="../img/leftHand.png" alt="" class="handImg">
+        </div>
+        <div class="rightHand">
+            <input type="text" maxlength="1" class="fingerKeyInput f1">
+            <input type="text" maxlength="1" class="fingerKeyInput f2">
+            <input type="text" maxlength="1" class="fingerKeyInput f3">
+            <input type="text" maxlength="1" class="fingerKeyInput f4">
+            <input type="text" maxlength="1" class="fingerKeyInput f5">
+            <input type="text" maxlength="1" class="fingerKeyInput f6">
+            <input type="text" maxlength="1" class="fingerKeyInput f7">
+            <input type="text" maxlength="1" class="fingerKeyInput f8">
+            <input type="text" maxlength="1" class="fingerKeyInput f9">
+            <img src="../img/rightHand.png" alt="" class="handImg">
+        </div>
+
+    </div>
 </main>
 </body>
 </html>
+<script src="../js/tools.js"></script>
+<script src="../js/piano.js"></script>
 <script src="../js/pianoPage.js"></script>

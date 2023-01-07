@@ -6,10 +6,24 @@
   font-family: "EnglishTitleFont";
   src: url("../font/BRUX.otf");
 }
+input {
+  background-color: transparent;
+  border: solid 1px whitesmoke;
+  line-height: 1.5em;
+  color: whitesmoke;
+}
+/*水平翻转*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.keyboardDown {
+  transform: translateY(10px);
+}
+.keyDown {
+  transform: scale(0.9);
+  background-color: gray !important;
 }
 body {
   background-color: #1e1e1e;
@@ -20,7 +34,7 @@ body h1 {
   line-height: 2em;
   color: #9cdcfe;
   font-size: 40px;
-  font-family: myChineseFont, serif;
+  font-family: EnglishTitleFont, serif;
   font-weight: lighter;
 }
 body main {
@@ -30,58 +44,179 @@ body main {
   padding-top: 20px;
   padding-bottom: 200px;
 }
-body main .area .pianoKeyBoard {
+body main .allKey {
+  width: 980px;
+  height: 500px;
+  margin: 10px auto;
   outline: solid 1px;
-  height: 200px;
   position: relative;
-  width: 600px;
-  background-color: wheat;
-  margin: 0 auto;
 }
-body main .area .pianoKeyBoard .pianoWhiteKey {
+body main .allKey .whiteKey {
+  width: 20px;
+  height: 60px;
   position: absolute;
-  height: 100%;
-  width: 50px;
-  outline: solid 1px;
+  outline: solid 1px dimgray;
   background-color: lightgray;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
   transition: all 0.2s;
+  top: 200px;
 }
-body main .area .pianoKeyBoard .pianoBlackKey {
+body main .allKey .blackKey {
+  width: 15px;
+  height: 36px;
   position: absolute;
-  height: 70%;
-  top: 0;
-  width: 40px;
-  outline: solid 1px;
+  margin-left: -7.5px;
+  outline: solid 1px dimgray;
   background-color: #222;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
   box-shadow: black -5px -2px 0 inset;
   transition: all 0.2s;
+  top: 200px;
 }
-body main .area .pianoKeyBoard .keyDown {
-  transform: scale(0.9);
-  background-color: gray;
+body main .allKey .leftHand,
+body main .allKey .rightHand {
+  position: absolute;
+  transition: all 0.2s;
 }
-body main .area .keyboard {
-  width: 600px;
-  height: 100px;
-  outline: solid 1px;
-  margin: 10px auto;
-}
-body main .area .keyboard .keyboardBlock {
-  width: 50px;
+body main .allKey .keyboardBlock {
+  width: 20px;
   float: left;
   text-align: center;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 2em;
   outline: solid 1px;
   font-family: EnglishTitleFont, serif;
   font-weight: lighter;
   transition: all 0.2s;
 }
-body main .area .keyboard .keyboardDown {
-  transform: translateY(10px);
+body main .allKey .leftHand {
+  top: 270px;
+  left: 280px;
+}
+body main .allKey .rightHand {
+  left: 300px;
+  top: 330px;
+}
+* {
+  color: greenyellow;
+}
+.settings {
+  width: 90%;
+  height: 600px;
+  outline: solid 1px;
+  margin: 0 auto;
+  position: relative;
+}
+.settings .leftHand,
+.settings .rightHand {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  outline: solid 1px;
+}
+.settings .leftHand .handImg,
+.settings .rightHand .handImg {
+  position: absolute;
+  outline: solid 1px;
+  width: 350px;
+  height: 350px;
+  top: 60px;
+  z-index: -5;
+}
+.settings .fingerKeyInput {
+  width: 50px;
+  display: block;
+  font-size: 20px;
+  position: absolute;
+  transition: all 0.2s;
+  background-color: black;
+}
+.settings .fingerKeyInput:hover {
+  background-color: #2b2b2b;
+}
+.settings .leftHand .handImg {
+  left: 40px;
+}
+.settings .leftHand .f1 {
+  left: 0;
+  top: 142px;
+}
+.settings .leftHand .f2 {
+  left: 39px;
+  top: 103px;
+}
+.settings .leftHand .f3 {
+  left: 98px;
+  top: 82px;
+}
+.settings .leftHand .f4 {
+  left: 152px;
+  top: 49px;
+}
+.settings .leftHand .f5 {
+  left: 209px;
+  top: 38px;
+}
+.settings .leftHand .f6 {
+  left: 274px;
+  top: 70px;
+}
+.settings .leftHand .f7 {
+  left: 317px;
+  top: 169px;
+}
+.settings .leftHand .f8 {
+  left: 365px;
+  top: 184px;
+}
+.settings .leftHand .f9 {
+  left: 417px;
+  top: 187px;
+}
+.settings .rightHand {
+  position: absolute;
+  right: 0;
+}
+.settings .rightHand .fingerKeyInput {
+  width: 50px;
+  display: block;
+  font-size: 20px;
+}
+.settings .rightHand .handImg {
+  right: 40px;
+}
+.settings .rightHand .f1 {
+  left: 26px;
+  top: 199px;
+}
+.settings .rightHand .f2 {
+  left: 85px;
+  top: 165px;
+}
+.settings .rightHand .f3 {
+  left: 139px;
+  top: 162px;
+}
+.settings .rightHand .f4 {
+  left: 181px;
+  top: 66px;
+}
+.settings .rightHand .f5 {
+  left: 239px;
+  top: 37px;
+}
+.settings .rightHand .f6 {
+  left: 296px;
+  top: 43px;
+}
+.settings .rightHand .f7 {
+  left: 347px;
+  top: 69px;
+}
+.settings .rightHand .f8 {
+  left: 396px;
+  top: 72px;
+}
+.settings .rightHand .f9 {
+  left: 445px;
+  top: 73px;
 }
 /*# sourceMappingURL=piano.css.map */
