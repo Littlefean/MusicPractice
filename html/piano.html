@@ -14,31 +14,26 @@
     <!--展示所有键-->
     <div class="allKey">
         <div class="leftHand">
-            <div class="keyboardBlock keyCode-KeyQ">q</div>
-            <div class="keyboardBlock keyCode-KeyW">w</div>
-            <div class="keyboardBlock keyCode-KeyE">e</div>
-            <div class="keyboardBlock keyCode-KeyR">r</div>
-            <div class="keyboardBlock keyCode-KeyT">t</div>
-            <div class="keyboardBlock keyCode-KeyY">y</div>
-            <div class="keyboardBlock keyCode-KeyU">u</div>
-            <div class="keyboardBlock keyCode-KeyI">i</div>
-            <div class="keyboardBlock keyCode-KeyO">o</div>
-            <div class="keyboardBlock keyCode-KeyP">p</div>
-            <div class="keyboardBlock keyCode-BracketLeft">[</div>
-            <div class="keyboardBlock keyCode-BracketRight">]</div>
+            <div class="keyboardBlock L1">?</div>
+            <div class="keyboardBlock L2">?</div>
+            <div class="keyboardBlock L3">?</div>
+            <div class="keyboardBlock L4">?</div>
+            <div class="keyboardBlock L5">?</div>
+            <div class="keyboardBlock L6">?</div>
+            <div class="keyboardBlock L7">?</div>
+            <div class="keyboardBlock L8">?</div>
+            <div class="keyboardBlock L9">?</div>
         </div>
         <div class="rightHand">
-            <div class="keyboardBlock keyCode-KeyA">A</div>
-            <div class="keyboardBlock keyCode-KeyS">S</div>
-            <div class="keyboardBlock keyCode-KeyD">D</div>
-            <div class="keyboardBlock keyCode-KeyF">F</div>
-            <div class="keyboardBlock keyCode-KeyG">G</div>
-            <div class="keyboardBlock keyCode-KeyH">H</div>
-            <div class="keyboardBlock keyCode-KeyJ">J</div>
-            <div class="keyboardBlock keyCode-KeyK">K</div>
-            <div class="keyboardBlock keyCode-KeyL">L</div>
-            <div class="keyboardBlock keyCode-Semicolon">;</div>
-            <div class="keyboardBlock keyCode-Quote">'</div>
+            <div class="keyboardBlock R1">?</div>
+            <div class="keyboardBlock R2">?</div>
+            <div class="keyboardBlock R3">?</div>
+            <div class="keyboardBlock R4">?</div>
+            <div class="keyboardBlock R5">?</div>
+            <div class="keyboardBlock R6">?</div>
+            <div class="keyboardBlock R7">?</div>
+            <div class="keyboardBlock R8">?</div>
+            <div class="keyboardBlock R9">?</div>
         </div>
     </div>
     <div class="settings">
@@ -58,27 +53,32 @@
             <option value="B">B</option>
         </select>
         <div class="leftHand">
-            <input type="text" maxlength="1" class="fingerKeyInput f1">
-            <input type="text" maxlength="1" class="fingerKeyInput f2">
-            <input type="text" maxlength="1" class="fingerKeyInput f3">
-            <input type="text" maxlength="1" class="fingerKeyInput f4">
-            <input type="text" maxlength="1" class="fingerKeyInput f5">
-            <input type="text" maxlength="1" class="fingerKeyInput f6">
-            <input type="text" maxlength="1" class="fingerKeyInput f7">
-            <input type="text" maxlength="1" class="fingerKeyInput f8">
-            <input type="text" maxlength="1" class="fingerKeyInput f9">
+            <input type="text" maxlength="1" class="fingerKeyInput f1" value="`">
+            <input type="text" maxlength="1" class="fingerKeyInput f2" value="1">
+            <input type="text" maxlength="1" class="fingerKeyInput f3" value="q">
+            <input type="text" maxlength="1" class="fingerKeyInput f4" value="w">
+            <input type="text" maxlength="1" class="fingerKeyInput f5" value="e">
+            <input type="text" maxlength="1" class="fingerKeyInput f6" value="r">
+            <input type="text" maxlength="1" class="fingerKeyInput f7" value="v">
+            <input type="text" maxlength="1" class="fingerKeyInput f8" value="b">
+            <input type="text" maxlength="1" class="fingerKeyInput f9" value="n">
+            <input type="text" maxlength="1" class="fingerKeyInput lshift" value="c">
+            <input type="text" maxlength="1" class="fingerKeyInput rshift" value="f">
+
             <img src="../img/leftHand.png" alt="" class="handImg">
         </div>
         <div class="rightHand">
-            <input type="text" maxlength="1" class="fingerKeyInput f1">
-            <input type="text" maxlength="1" class="fingerKeyInput f2">
-            <input type="text" maxlength="1" class="fingerKeyInput f3">
-            <input type="text" maxlength="1" class="fingerKeyInput f4">
-            <input type="text" maxlength="1" class="fingerKeyInput f5">
-            <input type="text" maxlength="1" class="fingerKeyInput f6">
-            <input type="text" maxlength="1" class="fingerKeyInput f7">
-            <input type="text" maxlength="1" class="fingerKeyInput f8">
-            <input type="text" maxlength="1" class="fingerKeyInput f9">
+            <input type="text" maxlength="1" class="fingerKeyInput f1" value="v">
+            <input type="text" maxlength="1" class="fingerKeyInput f2" value="b">
+            <input type="text" maxlength="1" class="fingerKeyInput f3" value="n">
+            <input type="text" maxlength="1" class="fingerKeyInput f4" value="u">
+            <input type="text" maxlength="1" class="fingerKeyInput f5" value="i">
+            <input type="text" maxlength="1" class="fingerKeyInput f6" value="o">
+            <input type="text" maxlength="1" class="fingerKeyInput f7" value="p">
+            <input type="text" maxlength="1" class="fingerKeyInput f8" value="[">
+            <input type="text" maxlength="1" class="fingerKeyInput f9" value="]">
+            <input type="text" maxlength="1" class="fingerKeyInput lshift" value="m">
+            <input type="text" maxlength="1" class="fingerKeyInput rshift" value="\">
             <img src="../img/rightHand.png" alt="" class="handImg">
         </div>
 
@@ -86,6 +86,8 @@
 </main>
 </body>
 </html>
+<script src="../js/preventDefaultKey.js"></script>
 <script src="../js/tools.js"></script>
+<script src="../js/HandLocation.js"></script>
 <script src="../js/piano.js"></script>
 <script src="../js/pianoPage.js"></script>

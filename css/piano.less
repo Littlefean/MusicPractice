@@ -49,7 +49,7 @@ body {
     .allKey {
       @whiteKeyWidth: 20px;
       @blackKeyWidth: @whiteKeyWidth*0.75;
-      @whiteKeyHeight: 60px;
+      @whiteKeyHeight: 120px;
       @keyTop: 200px; // 上面留白距离
 
       width: @whiteKeyWidth*49;
@@ -83,29 +83,44 @@ body {
       .leftHand, .rightHand {
         position: absolute;
         transition: all 0.2s;
+        z-index: 200;
+
+        .keyboardBlock {
+          width: @whiteKeyWidth;
+          float: left;
+          text-align: center;
+          font-size: 20px;
+          line-height: 2em;
+          outline: solid 1px royalblue;
+          color: white;
+          .EngFont();
+          transition: all 0.2s;
+        }
+
+        .L1, .L2, .L8, .L9, .R8, .R9 {
+          margin-top: 5px;
+        }
+
+
+        .R3 {
+          margin-top: 15px;
+        }
+
+        .R1, .R2 {
+          margin-top: 18px;
+        }
       }
 
-      .keyboardBlock {
-        width: @whiteKeyWidth;
-        float: left;
-        text-align: center;
-        font-size: 20px;
-        line-height: 2em;
-        outline: solid 1px;
-        .EngFont();
-
-        transition: all 0.2s;
-      }
 
       .leftHand {
-        top: 270px;
+        top: 360px;
         left: 14*@whiteKeyWidth;
 
       }
 
       .rightHand {
-        left: 15*@whiteKeyWidth;
-        top: 330px;
+        left: 19*@whiteKeyWidth;
+        top: 280px;
         //background-color: red;
       }
 

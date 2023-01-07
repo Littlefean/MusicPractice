@@ -4,7 +4,7 @@
  */
 function $(queryStr) {
     if (document.querySelector(queryStr) === null) {
-        console.log("选择器没有找到");
+        console.warn("选择器没有找到");
     }
     return document.querySelector(queryStr);
 }
