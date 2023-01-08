@@ -5,10 +5,11 @@ class Piano {
     // -- ** -- ** -- -- ** -- ** -- ** --
     // 01 02 03 04 05 06 07 08 09 10 11 12
     constructor() {
+        this.fingerToKey = {};  // r1 : a
         this.keyToName = {};  // a : 2_05
         this.keyDownDic = {}; // 防止按下疯狂播放
         this.nameToEleDic = {};  //  2_05 : element
-        this.rightHandLoc = [3, 1];  // 当前右手手位，大拇指位置 第三组的C位
+        this.rightHandLoc = new HandLocation(this);  // 当前右手手位，大拇指位置 第三组的C位
 
         this.rightHandLShiftKey = null;
         this.rightHandRShiftKey = null;
@@ -65,10 +66,14 @@ class Piano {
         window.addEventListener("keypress", (e) => {
             // 是否是移动 todo
             if (e.key === this.rightHandLShiftKey) {
-
+                this.rightHandLoc.rightShift();
+                this.updateHandLoc();
+                return;
             }
             if (e.key === this.rightHandRShiftKey) {
-
+                this.rightHandLoc.leftShift();
+                this.updateHandLoc();
+                return;
             }
 
             if (!this.keyToName[e.key]) {  // 阻止其他键参与进来报错
@@ -119,35 +124,55 @@ class Piano {
         this.nameToEleDic[this.keyToName[e.key]].classList.remove("keyDown");
     }
 
-    // 右手右移动
-    rightHandRShift() {
-        // 动画移动
-
-        // 对应数据更改;
-
-    }
-
-    // 右手左移动
-    rightHandLshift() {
-
-    }
-
     /**
      * 更新设置
      */
     refreshSettings() {
         let rightHandEle = $(".settings .rightHand");  // 右手的设置面板
-        this.keyToName[rightHandEle.querySelector(".f1").value] = "2_10"
-        this.keyToName[rightHandEle.querySelector(".f2").value] = "2_12"
-        this.keyToName[rightHandEle.querySelector(".f3").value] = "3_01"
-        this.keyToName[rightHandEle.querySelector(".f4").value] = "3_03"
-        this.keyToName[rightHandEle.querySelector(".f5").value] = "3_05"
-        this.keyToName[rightHandEle.querySelector(".f6").value] = "3_06"
-        this.keyToName[rightHandEle.querySelector(".f7").value] = "3_08"
-        this.keyToName[rightHandEle.querySelector(".f8").value] = "3_10"
-        this.keyToName[rightHandEle.querySelector(".f9").value] = "3_12";
+        let rk1 = rightHandEle.querySelector(".f1").value;
+        let rk2 = rightHandEle.querySelector(".f2").value;
+        let rk3 = rightHandEle.querySelector(".f3").value;
+        let rk4 = rightHandEle.querySelector(".f4").value;
+        let rk5 = rightHandEle.querySelector(".f5").value;
+        let rk6 = rightHandEle.querySelector(".f6").value;
+        let rk7 = rightHandEle.querySelector(".f7").value;
+        let rk8 = rightHandEle.querySelector(".f8").value;
+        let rk9 = rightHandEle.querySelector(".f9").value;
+        this.fingerToKey["r1"] = rk1;
+        this.fingerToKey["r2"] = rk2;
+        this.fingerToKey["r3"] = rk3;
+        this.fingerToKey["r4"] = rk4;
+        this.fingerToKey["r5"] = rk5;
+        this.fingerToKey["r6"] = rk6;
+        this.fingerToKey["r7"] = rk7;
+        this.fingerToKey["r8"] = rk8;
+        this.fingerToKey["r9"] = rk9;
+        this.keyToName[rk1] = "2_10"
+        this.keyToName[rk2] = "2_12"
+        this.keyToName[rk3] = "3_01"
+        this.keyToName[rk4] = "3_03"
+        this.keyToName[rk5] = "3_05"
+        this.keyToName[rk6] = "3_06"
+        this.keyToName[rk7] = "3_08"
+        this.keyToName[rk8] = "3_10"
+        this.keyToName[rk9] = "3_12";
         this.rightHandLShiftKey = rightHandEle.querySelector(".lshift").value;
-        this.reftHandRShiftKey = rightHandEle.querySelector(".rshift").value;
+        this.rightHandRShiftKey = rightHandEle.querySelector(".rshift").value;
+
+    }
+
+    // 根据手位更换音源
+    updateHandLoc() {
+        let handNote = this.rightHandLoc.locNote;
+        this.keyToName[this.fingerToKey["r1"]] = handNote.moveWhite(-2).fileName();
+        this.keyToName[this.fingerToKey["r2"]] = handNote.moveWhite(-1).fileName();
+        this.keyToName[this.fingerToKey["r3"]] = handNote.fileName();
+        this.keyToName[this.fingerToKey["r4"]] = handNote.moveWhite(1).fileName();
+        this.keyToName[this.fingerToKey["r5"]] = handNote.moveWhite(2).fileName();
+        this.keyToName[this.fingerToKey["r6"]] = handNote.moveWhite(3).fileName();
+        this.keyToName[this.fingerToKey["r7"]] = handNote.moveWhite(4).fileName();
+        this.keyToName[this.fingerToKey["r8"]] = handNote.moveWhite(5).fileName();
+        this.keyToName[this.fingerToKey["r9"]] = handNote.moveWhite(6).fileName();
 
     }
 

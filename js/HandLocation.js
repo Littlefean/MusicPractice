@@ -5,9 +5,30 @@
 class HandLocation {
     // --    --    -- --    --    --    --
     // 01 02 03 04 05 06 07 08 09 10 11 12
-    constructor() {
-        this.group = 3;  // 默认在第三组
-        this.note = 1; // 拇指默认在 1=C位置上
+    constructor(bindPiano) {
+        this.locNote = new Note(3, 1);
+        this.bindPiano = bindPiano;  // 绑定的键盘
+        // 先只考虑C手位和F手位
+        this.rendRefresh();
+        console.log(this.locNote.leftCount(), "zuo")
+    }
+
+
+    // 外层调用移位
+    leftShift() {
+        this.locNote.leftShift();
+        this.rendRefresh();
+    }
+
+    // 处理特效的移位
+    rendRefresh() {
+        $(".allKey .rightHand").style.left = `${(this.locNote.leftCount() - 3) * 20}px`;
+    }
+
+    // 外层调用移位
+    rightShift() {
+        this.locNote.rightShift();
+        this.rendRefresh();
     }
 
     // 向右移动n位置
