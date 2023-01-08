@@ -97,6 +97,19 @@ class Note {
         idx += n;
         return Note.eval(Note.whiteArr[idx]);
     }
+
+    /**
+     * 从C调转
+     * @param n {Number} 0 1 2 ... 0 表示C调
+     */
+    changeMode(n) {
+        this.high += n;
+        if (this.high > 12) {
+            this.group++;
+            this.high -= 12;
+        }
+
+    }
 }
 
 

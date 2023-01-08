@@ -13,6 +13,9 @@ class Piano {
 
         this.rightHandLShiftKey = null;
         this.rightHandRShiftKey = null;
+
+        this.mood = 0;  // 0表示C大调，1表示C#大调，以此类推到11表示B大调
+
         this.pageInit();
         this.refreshSettings();
         this.addEvent();
@@ -84,10 +87,7 @@ class Piano {
             }
             // 防止按下疯狂触发
             this.keyDownDic[e.key] = true;
-            // 音频播放
-            let audio = new Audio(`../audio/${this.keyToName[e.key]}.mp3`);
-            audio.play().then(r => {
-            });
+            this.play(e);
             this.rendByKeyDown(e);
         });
 
@@ -100,6 +100,20 @@ class Piano {
             this.rendByKeyUp(e);
         });
 
+    }
+
+    /**
+     * 根据按键播放音频
+     * @param e {KeyboardEvent}
+     */
+    play(e) {
+        // 音频播放
+        let note = Note.eval(this.keyToName[e.key]);
+        // 加入转调
+        note.changeMode(this.mood);
+        let audio = new Audio(`../audio/${note.fileName()}.mp3`);
+        audio.play().then(r => {
+        });
     }
 
     /**

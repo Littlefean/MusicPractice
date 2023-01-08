@@ -132,6 +132,10 @@ body main .allKey .rightHand {
   margin: 0 auto;
   position: relative;
 }
+.settings select {
+  background-color: black;
+  color: greenyellow;
+}
 .settings .leftHand,
 .settings .rightHand {
   position: absolute;
