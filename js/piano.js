@@ -88,7 +88,6 @@ class Piano {
             // 防止按下疯狂触发
             this.keyDownDic[e.key] = true;
             this.play(e);
-            this.rendByKeyDown(e);
         });
 
         window.addEventListener("keyup", (e) => {
@@ -111,21 +110,15 @@ class Piano {
         let note = Note.eval(this.keyToName[e.key]);
         // 加入转调
         note.changeMode(this.mood);
+        // 转调完成
         let audio = new Audio(`../audio/${note.fileName()}.mp3`);
         audio.play().then(r => {
         });
+        // 钢琴键盘渲染
+        this.nameToEleDic[note.fileName()].classList.add("keyDown");
     }
 
-    /**
-     * 按下某个键盘之后渲染特效
-     * @param e {KeyboardEvent}
-     */
-    rendByKeyDown(e) {
-        // 特效渲染
-        // $(`.keyCode-${e.code}`).classList.add("keyboardDown");
-        // 钢琴键盘渲染
-        this.nameToEleDic[this.keyToName[e.key]].classList.add("keyDown");
-    }
+
 
     /**
      * 松开某个键之后渲染特效
@@ -134,8 +127,12 @@ class Piano {
     rendByKeyUp(e) {
         // 特效渲染
         // $(`.keyCode-${e.code}`).classList.remove("keyboardDown");
+        let note = Note.eval(this.keyToName[e.key]);
+        // 加入转调
+        note.changeMode(this.mood);
+        // 转调完成
         // 钢琴键盘渲染
-        this.nameToEleDic[this.keyToName[e.key]].classList.remove("keyDown");
+        this.nameToEleDic[note.fileName()].classList.remove("keyDown");
     }
 
     /**
