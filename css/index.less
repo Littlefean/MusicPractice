@@ -1,5 +1,28 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "init";
+
+
+
+body {
+  h1 {
+    text-align: center;
+    line-height: 2em;
+  }
+
+  main {
+    width: 80%;
+    margin: 0 auto;
+
+    a {
+      display: block;
+      margin: 5px;
+      text-decoration: none;
+
+      transition: all 0.2s;
+
+      &:hover {
+        color: #9cdcfe;
+      }
+    }
+
+  }
 }

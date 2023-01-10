@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input {
+  background-color: transparent;
+  border: solid 1px whitesmoke;
+  line-height: 1.5em;
+  color: whitesmoke;
+}
+a {
+  color: whitesmoke;
+}
+/*水平翻转*/
+body {
+  background-color: #1e1e1e;
+  color: white;
+}
+body h1 {
+  text-align: center;
+  line-height: 2em;
+  color: #9cdcfe;
+}
+body .settings {
+  outline: solid 1px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+body .training {
+  outline: solid 1px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  overflow: hidden;
+}
+body .training .left {
+  width: 50%;
+  float: left;
+  outline: solid 1px;
+}
+body .training .left .play {
+  display: block;
+  font-size: 20px;
+  margin: 0 auto;
+}
+body .training .left .play:hover {
+  cursor: pointer;
+}
+body .training .left .submit {
+  display: block;
+  font-size: 20px;
+  margin: 0 auto;
+}
+body .training .left .submit:hover {
+  cursor: pointer;
+}
+body .training .left .pianoList {
+  outline: solid 1px;
+}
+body .training .left .pianoList .pianoRoll {
+  height: 60px;
+  margin: 5px;
+  position: relative;
+}
+body .training .left .pianoList .pianoRoll .white:hover,
+body .training .left .pianoList .pianoRoll .black:hover {
+  outline: solid 2px red;
+  background-color: gray;
+  cursor: pointer;
+}
+body .training .left .pianoList .pianoRoll .selected {
+  box-shadow: blue 0 0 10px inset;
+  border: solid blue 5px;
+}
+body .training .left .pianoList .pianoRoll .white {
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  outline: solid 1px;
+  background-color: lightgray;
+}
+body .training .left .pianoList .pianoRoll .black {
+  height: 60%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transform: scaleX(0.8);
+  background-color: black;
+  outline: solid 1px;
+}
+body .training .right {
+  width: 40%;
+  height: 500px;
+  float: right;
+  outline: solid 1px;
+}
+/*# sourceMappingURL=listeningTraining.css.map */

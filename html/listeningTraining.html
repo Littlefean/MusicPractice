@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/listeningTraining.css">
+</head>
+<body>
+
+<h1>听力训练</h1>
+<div class="settings">
+    <h2>设置</h2>
+    <span>音色设置</span>
+    <select name="instruments">
+        <option value="">piano</option>
+    </select>
+
+    <span>旋律长度</span>
+    <input type="number" min="1" max="10" value="1">
+
+    <span>和弦</span>
+    <input type="number" min="1" value="1" disabled>
+
+    <span>音高范围</span>
+    <span>[</span>
+    <input type="number" min="1" max="7" value="3">
+    <span>,</span>
+    <input type="number" min="1" max="7" value="4">
+    <span>)</span>
+    <span>调式</span>
+    <select name="instruments">
+        <option value="cMajor">C大调</option>
+        <option value="">全音阶</option>
+        <option value="">五声音阶</option>
+    </select>
+
+    <button class="start">刷新并开始</button>
+</div>
+<div class="training">
+    <div class="left">
+        <h2>答题界面</h2>
+
+        <button class="play">播放</button>
+        <div class="pianoList">
+            <!--<div class="pianoRoll"></div>-->
+        </div>
+        <button class="submit">确认</button>
+        <button class="next">下一题</button>
+    </div>
+    <div class="right">
+        <h2>正确率</h2>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/tools.js"></script>
+<script src="../js/Note.js"></script>
+<script src="../js/ChordTest.js"></script>
+<script src="../js/listeningTraining.js"></script>
+
+<!--
+单音符听力测试、和弦听力测试
+音色选择
+两个音，三个音连续出现的测试。
+音出现的范围设定，
+是否出现黑键，调性？C大调，小调？五声音阶
+
+右侧出现做对做错历史，显示正确率
+
+-->

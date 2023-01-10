@@ -6,13 +6,25 @@
   font-family: "EnglishTitleFont";
   src: url("../font/BRUX.otf");
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 input {
   background-color: transparent;
   border: solid 1px whitesmoke;
   line-height: 1.5em;
   color: whitesmoke;
 }
+a {
+  color: whitesmoke;
+}
 /*水平翻转*/
+body {
+  background-color: #1e1e1e;
+  color: white;
+}
 * {
   margin: 0;
   padding: 0;
@@ -24,10 +36,6 @@ input {
 .keyDown {
   transform: scale(0.9);
   background-color: gray !important;
-}
-body {
-  background-color: #1e1e1e;
-  color: white;
 }
 body h1 {
   text-align: center;

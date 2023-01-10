@@ -3,4 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
+input {
+  background-color: transparent;
+  border: solid 1px whitesmoke;
+  line-height: 1.5em;
+  color: whitesmoke;
+}
+a {
+  color: whitesmoke;
+}
+/*水平翻转*/
+body {
+  background-color: #1e1e1e;
+  color: white;
+}
+body h1 {
+  text-align: center;
+  line-height: 2em;
+}
+body main {
+  width: 80%;
+  margin: 0 auto;
+}
+body main a {
+  display: block;
+  margin: 5px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+body main a:hover {
+  color: #9cdcfe;
+}
 /*# sourceMappingURL=index.css.map */

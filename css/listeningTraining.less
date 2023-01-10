@@ -1,0 +1,107 @@
+@import "init";
+
+
+body {
+  h1 {
+    text-align: center;
+    line-height: 2em;
+    color: #9cdcfe;
+
+  }
+
+  .settings {
+    outline: solid 1px;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  .training {
+    outline: solid 1px;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    overflow: hidden;
+
+    .left {
+      width: 50%;
+      float: left;
+      outline: solid 1px;
+
+      .play {
+        display: block;
+        font-size: 20px;
+        margin: 0 auto;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .submit {
+        display: block;
+        font-size: 20px;
+        margin: 0 auto;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .pianoList {
+        outline: solid 1px;
+
+        .pianoRoll {
+          height: 60px;
+          margin: 5px;
+          position: relative;
+
+          .white, .black {
+            &:hover {
+              outline: solid 2px red;
+              background-color: gray;
+              cursor: pointer;
+              //z-index: 99;
+            }
+          }
+
+          .selected {
+            box-shadow: blue 0 0 10px inset;
+            border: solid blue 5px;
+          }
+
+          .white {
+            height: 100%;
+            width: 10px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            outline: solid 1px;
+            background-color: lightgray;
+
+          }
+
+          .black {
+            height: 60%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 100;
+
+            transform: scaleX(0.8);
+
+            background-color: black;
+            outline: solid 1px;
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 40%;
+      height: 500px;
+      float: right;
+      outline: solid 1px;
+    }
+  }
+}
