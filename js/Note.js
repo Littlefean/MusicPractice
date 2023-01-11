@@ -36,6 +36,16 @@ class Note {
     }
 
     /**
+     * 随机一个音符
+     * @param left  左侧音符 组
+     * @param right  右侧音符 在第几组
+     * @constructor
+     */
+    static Random(left, right) {
+
+    }
+
+    /**
      * 当前这个键位距离左边有多少个白健
      */
     leftCount() {

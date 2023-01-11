@@ -93,10 +93,13 @@ function init() {
         trainingEle.style.display = "block";
     }
 
+    let ct = new ChordTest()
+    ct.randTest();
     // 播放
     let playEle = $(".play");
     playEle.onclick = function () {
-
+        ct.play();
+        console.log("播放了");
     }
 
 }

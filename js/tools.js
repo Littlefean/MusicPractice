@@ -63,3 +63,16 @@ function randomColor() {
     return `#${strNormal(r)}${strNormal(g)}${strNormal(b)}`;
 
 }
+
+/**
+ * 随机整数，包括左边不包括右边
+ * @param a
+ * @param b
+ * @return {number}
+ */
+function randint(a, b) {
+    let r = Math.random();
+    r *= Math.abs(b - a);
+    r += a;
+    return Math.floor(r);
+}
