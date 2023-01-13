@@ -52,36 +52,71 @@
             <option value="A#">A#</option>
             <option value="B">B</option>
         </select>
-        <div class="leftHand">
-            <input type="text" maxlength="1" class="fingerKeyInput f1" value="`">
-            <input type="text" maxlength="1" class="fingerKeyInput f2" value="1">
-            <input type="text" maxlength="1" class="fingerKeyInput f3" value="q">
-            <input type="text" maxlength="1" class="fingerKeyInput f4" value="w">
-            <input type="text" maxlength="1" class="fingerKeyInput f5" value="e">
-            <input type="text" maxlength="1" class="fingerKeyInput f6" value="r">
-            <input type="text" maxlength="1" class="fingerKeyInput f7" value="v">
-            <input type="text" maxlength="1" class="fingerKeyInput f8" value="b">
-            <input type="text" maxlength="1" class="fingerKeyInput f9" value="n">
-            <input type="text" maxlength="1" class="fingerKeyInput lshift" value="c">
-            <input type="text" maxlength="1" class="fingerKeyInput rshift" value="f">
+        按键：
+        <select name="" id="keybind">
+            <option value="twohands" selected>双手/自定义</option>
+            <option value="genshin">原琴</option>
+        </select>
+        <div id="keys_twohands">
+            <div class="leftHand">
+                <input type="text" maxlength="1" class="fingerKeyInput f1" value="`">
+                <input type="text" maxlength="1" class="fingerKeyInput f2" value="1">
+                <input type="text" maxlength="1" class="fingerKeyInput f3" value="q">
+                <input type="text" maxlength="1" class="fingerKeyInput f4" value="w">
+                <input type="text" maxlength="1" class="fingerKeyInput f5" value="e">
+                <input type="text" maxlength="1" class="fingerKeyInput f6" value="r">
+                <input type="text" maxlength="1" class="fingerKeyInput f7" value="v">
+                <input type="text" maxlength="1" class="fingerKeyInput f8" value="b">
+                <input type="text" maxlength="1" class="fingerKeyInput f9" value="n">
+                <input type="text" maxlength="1" class="fingerKeyInput lshift" value="c">
+                <input type="text" maxlength="1" class="fingerKeyInput rshift" value="f">
 
-            <img src="../img/leftHand.png" alt="" class="handImg">
+                <img src="../img/leftHand.png" alt="" class="handImg">
+            </div>
+            <div class="rightHand">
+                <input type="text" maxlength="1" class="fingerKeyInput f1" value="v">
+                <input type="text" maxlength="1" class="fingerKeyInput f2" value="b">
+                <input type="text" maxlength="1" class="fingerKeyInput f3" value="n">
+                <input type="text" maxlength="1" class="fingerKeyInput f4" value="u">
+                <input type="text" maxlength="1" class="fingerKeyInput f5" value="i">
+                <input type="text" maxlength="1" class="fingerKeyInput f6" value="o">
+                <input type="text" maxlength="1" class="fingerKeyInput f7" value="p">
+                <input type="text" maxlength="1" class="fingerKeyInput f8" value="[">
+                <input type="text" maxlength="1" class="fingerKeyInput f9" value="]">
+                <input type="text" maxlength="1" class="fingerKeyInput lshift" value="e">
+                <input type="text" maxlength="1" class="fingerKeyInput rshift" value="q">
+                <img src="../img/rightHand.png" alt="" class="handImg">
+            </div>
         </div>
-        <div class="rightHand">
-            <input type="text" maxlength="1" class="fingerKeyInput f1" value="v">
-            <input type="text" maxlength="1" class="fingerKeyInput f2" value="b">
-            <input type="text" maxlength="1" class="fingerKeyInput f3" value="n">
-            <input type="text" maxlength="1" class="fingerKeyInput f4" value="u">
-            <input type="text" maxlength="1" class="fingerKeyInput f5" value="i">
-            <input type="text" maxlength="1" class="fingerKeyInput f6" value="o">
-            <input type="text" maxlength="1" class="fingerKeyInput f7" value="p">
-            <input type="text" maxlength="1" class="fingerKeyInput f8" value="[">
-            <input type="text" maxlength="1" class="fingerKeyInput f9" value="]">
-            <input type="text" maxlength="1" class="fingerKeyInput lshift" value="e">
-            <input type="text" maxlength="1" class="fingerKeyInput rshift" value="q">
-            <img src="../img/rightHand.png" alt="" class="handImg">
+        <div id="keys_genshin" style="display: none;">
+            <div class="line q">
+                <div class="key q">q</div>
+                <div class="key w">w</div>
+                <div class="key e">e</div>
+                <div class="key r">r</div>
+                <div class="key t">t</div>
+                <div class="key y">y</div>
+                <div class="key u">u</div>
+            </div>
+            <div class="line a">
+                <div class="key a">a do</div>
+                <div class="key s">s re</div>
+                <div class="key d">d mi</div>
+                <div class="key f">f fa</div>
+                <div class="key g">g so</div>
+                <div class="key h">h la</div>
+                <div class="key j">j xi</div>
+            </div>
+            <div class="line z">
+                <div class="key z">z</div>
+                <div class="key x">x</div>
+                <div class="key c">c</div>
+                <div class="key v">v</div>
+                <div class="key b">b</div>
+                <div class="key n">n</div>
+                <div class="key m">m</div>
+            </div>
         </div>
-
     </div>
 </main>
 </body>
