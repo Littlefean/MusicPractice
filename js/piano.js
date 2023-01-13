@@ -166,6 +166,8 @@ class Piano {
      * 更新设置
      */
     refreshSettings() {
+        this.fingerToKey = {};
+        this.keyToName = {};
         if ($("#keybind").value === "twohands") {
             let rhe = $(".settings .rightHand"); // 右手的设置面板
             let rk1 = rhe.querySelector(".f1").value;
