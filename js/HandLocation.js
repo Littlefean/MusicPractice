@@ -31,6 +31,13 @@ class HandLocation {
         this.rendRefresh();
     }
 
+    /**
+     * 重置到3_01
+     */
+    reset() {
+        this.locNote = new Note(3, 1);
+    }
+
     // 向右移动n位置
     right(n) {
 

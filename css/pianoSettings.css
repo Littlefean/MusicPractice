@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input {
+  background-color: transparent;
+  border: solid 1px whitesmoke;
+  line-height: 1.5em;
+  color: whitesmoke;
+}
+a {
+  color: whitesmoke;
+}
+/*水平翻转*/
+body {
+  background-color: #1e1e1e;
+  color: white;
+}
+* {
+  color: greenyellow;
+}
+.settings {
+  width: 90%;
+  height: 600px;
+  outline: solid 1px;
+  margin: 0 auto;
+  position: relative;
+}
+.settings select {
+  background-color: black;
+  color: greenyellow;
+}
+.settings #keys_twohands .leftHand,
+.settings #keys_twohands .rightHand {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  outline: solid 1px;
+}
+.settings #keys_twohands .leftHand .handImg,
+.settings #keys_twohands .rightHand .handImg {
+  position: absolute;
+  outline: solid 1px;
+  width: 350px;
+  height: 350px;
+  top: 60px;
+  z-index: -5;
+}
+.settings #keys_twohands .fingerKeyInput {
+  width: 50px;
+  display: block;
+  font-size: 20px;
+  text-indent: 0.5em;
+  position: absolute;
+  transition: all 0.2s;
+  background-color: black;
+}
+.settings #keys_twohands .fingerKeyInput:hover {
+  background-color: #2b2b2b;
+}
+.settings #keys_twohands .leftHand .handImg {
+  left: 40px;
+}
+.settings #keys_twohands .leftHand .lshift {
+  left: 26px;
+  top: 307px;
+}
+.settings #keys_twohands .leftHand .rshift {
+  left: 313px;
+  top: 302px;
+}
+.settings #keys_twohands .leftHand .f1 {
+  left: 0;
+  top: 142px;
+}
+.settings #keys_twohands .leftHand .f2 {
+  left: 39px;
+  top: 103px;
+}
+.settings #keys_twohands .leftHand .f3 {
+  left: 98px;
+  top: 82px;
+}
+.settings #keys_twohands .leftHand .f4 {
+  left: 152px;
+  top: 49px;
+}
+.settings #keys_twohands .leftHand .f5 {
+  left: 209px;
+  top: 38px;
+}
+.settings #keys_twohands .leftHand .f6 {
+  left: 274px;
+  top: 70px;
+}
+.settings #keys_twohands .leftHand .f7 {
+  left: 317px;
+  top: 169px;
+}
+.settings #keys_twohands .leftHand .f8 {
+  left: 365px;
+  top: 184px;
+}
+.settings #keys_twohands .leftHand .f9 {
+  left: 417px;
+  top: 187px;
+}
+.settings #keys_twohands .rightHand {
+  position: absolute;
+  right: 0;
+}
+.settings #keys_twohands .rightHand .fingerKeyInput {
+  width: 50px;
+  display: block;
+  font-size: 20px;
+}
+.settings #keys_twohands .rightHand .handImg {
+  right: 40px;
+}
+.settings #keys_twohands .rightHand .lshift {
+  left: 97px;
+  top: 321px;
+}
+.settings #keys_twohands .rightHand .rshift {
+  left: 425px;
+  top: 313px;
+}
+.settings #keys_twohands .rightHand .f1 {
+  left: 26px;
+  top: 199px;
+}
+.settings #keys_twohands .rightHand .f2 {
+  left: 85px;
+  top: 165px;
+}
+.settings #keys_twohands .rightHand .f3 {
+  left: 139px;
+  top: 162px;
+}
+.settings #keys_twohands .rightHand .f4 {
+  left: 181px;
+  top: 66px;
+}
+.settings #keys_twohands .rightHand .f5 {
+  left: 239px;
+  top: 37px;
+}
+.settings #keys_twohands .rightHand .f6 {
+  left: 296px;
+  top: 43px;
+}
+.settings #keys_twohands .rightHand .f7 {
+  left: 347px;
+  top: 69px;
+}
+.settings #keys_twohands .rightHand .f8 {
+  left: 396px;
+  top: 72px;
+}
+.settings #keys_twohands .rightHand .f9 {
+  left: 445px;
+  top: 73px;
+}
+.settings #keys_genshin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.settings #keys_genshin .line {
+  display: flex;
+  margin: 1em 0;
+}
+.settings #keys_genshin .line .key {
+  width: 5em;
+  height: 5em;
+  background-color: #eee;
+  color: #000;
+  margin: 0 1em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}

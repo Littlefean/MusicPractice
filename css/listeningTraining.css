@@ -22,12 +22,6 @@ body h1 {
   line-height: 2em;
   color: #9cdcfe;
 }
-body .settings {
-  outline: solid 1px;
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px;
-}
 body .training {
   outline: solid 1px;
   width: 90%;
@@ -99,4 +93,4 @@ body .training .right {
   float: right;
   outline: solid 1px;
 }
-/*# sourceMappingURL=listeningTraining.css.map */
+/*# sourceMappingURL=./listeningTraining.css.map */
