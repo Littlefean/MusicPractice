@@ -125,7 +125,4 @@ class Note {
     }
 }
 
-
-let n = new Note(3, 1);
-n.rightShift();
-console.log("3,1 >>>", n.fileName());
+export default Note;

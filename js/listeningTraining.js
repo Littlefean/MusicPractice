@@ -1,5 +1,5 @@
 /**
- *
+ *听力
  * by littlefean
  */
 let SETTINGS_DATA = {

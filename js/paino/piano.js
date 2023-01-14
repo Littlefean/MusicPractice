@@ -1,3 +1,6 @@
+import HandLocation from "./HandLocation.js";
+import Note from "./Note.js";
+
 /**
  * 钢琴类单例
  */
@@ -256,3 +259,5 @@ class Piano {
             .fileName();
     }
 }
+
+export default Piano;
