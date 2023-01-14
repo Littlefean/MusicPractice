@@ -25,4 +25,4 @@ function preventInit() {
 }
 
 // ==== 阻止浏览器的上下滚动屏幕
-preventInit();
+export default preventInit;

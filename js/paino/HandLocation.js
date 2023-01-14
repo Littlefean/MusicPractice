@@ -1,3 +1,5 @@
+import Note from "./Note.js";
+
 /**
  *
  * by littlefean
@@ -47,3 +49,5 @@ class HandLocation {
 
     }
 }
+
+export default HandLocation;
