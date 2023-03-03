@@ -145,7 +145,7 @@ class Piano {
             note.changeMode(this.mood);
         }
         // 转调完成
-        let path = `../../audio/${$("#source").value}/${note.fileName()}.mp3`;
+        let path = `../audio/${$("#source").value}/${note.fileName()}.mp3`;
         console.log(path);
         let audio = new Audio(path);
         audio.play().then((r) => {});
