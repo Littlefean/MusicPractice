@@ -1,127 +1,130 @@
 <!doctype html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Paino</title>
     <link rel="stylesheet" href="../css/piano.css">
     <script src="../js/tools.js"></script>
     <script src="../js/paino/pianoPage.js" type="module"></script>
 </head>
-<body>
-<h1>keyboard piano</h1>
-<main>
-    <!--展示所有键-->
-    <div class="allKey">
-        <div class="leftHand">
-            <div class="keyboardBlock L1">?</div>
-            <div class="keyboardBlock L2">?</div>
-            <div class="keyboardBlock L3">?</div>
-            <div class="keyboardBlock L4">?</div>
-            <div class="keyboardBlock L5">?</div>
-            <div class="keyboardBlock L6">?</div>
-            <div class="keyboardBlock L7">?</div>
-            <div class="keyboardBlock L8">?</div>
-            <div class="keyboardBlock L9">?</div>
-        </div>
-        <div class="rightHand">
-            <div class="keyboardBlock R1">?</div>
-            <div class="keyboardBlock R2">?</div>
-            <div class="keyboardBlock R3">?</div>
-            <div class="keyboardBlock R4">?</div>
-            <div class="keyboardBlock R5">?</div>
-            <div class="keyboardBlock R6">?</div>
-            <div class="keyboardBlock R7">?</div>
-            <div class="keyboardBlock R8">?</div>
-            <div class="keyboardBlock R9">?</div>
-        </div>
-    </div>
-    <div class="settings">
-        调式：
-        <select name="" id="mode">
-            <option value="C">C</option>
-            <option value="C#">C#</option>
-            <option value="D">D</option>
-            <option value="D#">D#</option>
-            <option value="E">E</option>
-            <option value="F">F</option>
-            <option value="F#">F#</option>
-            <option value="G">G</option>
-            <option value="G#">G#</option>
-            <option value="A">A</option>
-            <option value="A#">A#</option>
-            <option value="B">B</option>
-        </select>
-        按键：
-        <select name="" id="keybind">
-            <option value="twohands" selected>双手/自定义</option>
-            <option value="genshin">原琴</option>
-        </select>
-        <div id="keys_twohands">
-            <div class="leftHand">
-                <input type="text" maxlength="1" class="fingerKeyInput f1" value="`">
-                <input type="text" maxlength="1" class="fingerKeyInput f2" value="1">
-                <input type="text" maxlength="1" class="fingerKeyInput f3" value="q">
-                <input type="text" maxlength="1" class="fingerKeyInput f4" value="w">
-                <input type="text" maxlength="1" class="fingerKeyInput f5" value="e">
-                <input type="text" maxlength="1" class="fingerKeyInput f6" value="r">
-                <input type="text" maxlength="1" class="fingerKeyInput f7" value="v">
-                <input type="text" maxlength="1" class="fingerKeyInput f8" value="b">
-                <input type="text" maxlength="1" class="fingerKeyInput f9" value="n">
-                <input type="text" maxlength="1" class="fingerKeyInput lshift" value="c">
-                <input type="text" maxlength="1" class="fingerKeyInput rshift" value="f">
 
-                <img src="../img/leftHand.png" alt="" class="handImg">
+<body>
+    <h1>KEYBOARD PAINO</h1>
+    <main>
+        <!--展示所有键-->
+        <div class="allKey">
+            <div class="leftHand">
+                <div class="keyboardBlock L1">?</div>
+                <div class="keyboardBlock L2">?</div>
+                <div class="keyboardBlock L3">?</div>
+                <div class="keyboardBlock L4">?</div>
+                <div class="keyboardBlock L5">?</div>
+                <div class="keyboardBlock L6">?</div>
+                <div class="keyboardBlock L7">?</div>
+                <div class="keyboardBlock L8">?</div>
+                <div class="keyboardBlock L9">?</div>
             </div>
             <div class="rightHand">
-                <input type="text" maxlength="1" class="fingerKeyInput f1" value="v">
-                <input type="text" maxlength="1" class="fingerKeyInput f2" value="b">
-                <input type="text" maxlength="1" class="fingerKeyInput f3" value="n">
-                <input type="text" maxlength="1" class="fingerKeyInput f4" value="u">
-                <input type="text" maxlength="1" class="fingerKeyInput f5" value="i">
-                <input type="text" maxlength="1" class="fingerKeyInput f6" value="o">
-                <input type="text" maxlength="1" class="fingerKeyInput f7" value="p">
-                <input type="text" maxlength="1" class="fingerKeyInput f8" value="[">
-                <input type="text" maxlength="1" class="fingerKeyInput f9" value="]">
-                <input type="text" maxlength="1" class="fingerKeyInput lshift" value="e">
-                <input type="text" maxlength="1" class="fingerKeyInput rshift" value="q">
-                <img src="../img/rightHand.png" alt="" class="handImg">
+                <div class="keyboardBlock R1">v</div>
+                <div class="keyboardBlock R2">b</div>
+                <div class="keyboardBlock R3">n</div>
+                <div class="keyboardBlock R4">u</div>
+                <div class="keyboardBlock R5">i</div>
+                <div class="keyboardBlock R6">o</div>
+                <div class="keyboardBlock R7">p</div>
+                <div class="keyboardBlock R8">[</div>
+                <div class="keyboardBlock R9">]</div>
             </div>
         </div>
-        <div id="keys_genshin" style="display: none;">
-            <div class="line q">
-                <div class="key q">q</div>
-                <div class="key w">w</div>
-                <div class="key e">e</div>
-                <div class="key r">r</div>
-                <div class="key t">t</div>
-                <div class="key y">y</div>
-                <div class="key u">u</div>
+        <div class="settings">
+            调式：
+            <select name="" id="mode">
+                <option value="C">C</option>
+                <option value="C#">C#</option>
+                <option value="D">D</option>
+                <option value="D#">D#</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F#</option>
+                <option value="G">G</option>
+                <option value="G#">G#</option>
+                <option value="A">A</option>
+                <option value="A#">A#</option>
+                <option value="B">B</option>
+            </select>
+            按键：
+            <select name="" id="keybind">
+                <option value="twohands" selected>双手/自定义</option>
+                <option value="genshin">原琴</option>
+            </select>
+            <div id="keys_twohands">
+                <div class="leftHand">
+                    <input type="text" maxlength="1" class="fingerKeyInput f1" value="`">
+                    <input type="text" maxlength="1" class="fingerKeyInput f2" value="1">
+                    <input type="text" maxlength="1" class="fingerKeyInput f3" value="q">
+                    <input type="text" maxlength="1" class="fingerKeyInput f4" value="w">
+                    <input type="text" maxlength="1" class="fingerKeyInput f5" value="e">
+                    <input type="text" maxlength="1" class="fingerKeyInput f6" value="r">
+                    <input type="text" maxlength="1" class="fingerKeyInput f7" value="v">
+                    <input type="text" maxlength="1" class="fingerKeyInput f8" value="b">
+                    <input type="text" maxlength="1" class="fingerKeyInput f9" value="n">
+                    <input type="text" maxlength="1" class="fingerKeyInput lshift" value="c">
+                    <input type="text" maxlength="1" class="fingerKeyInput rshift" value="f">
+
+                    <img src="../img/leftHand.png" alt="" class="handImg">
+                </div>
+                <div class="rightHand">
+                    <input type="text" maxlength="1" class="fingerKeyInput f1" value="v">
+                    <input type="text" maxlength="1" class="fingerKeyInput f2" value="b">
+                    <input type="text" maxlength="1" class="fingerKeyInput f3" value="n">
+                    <input type="text" maxlength="1" class="fingerKeyInput f4" value="u">
+                    <input type="text" maxlength="1" class="fingerKeyInput f5" value="i">
+                    <input type="text" maxlength="1" class="fingerKeyInput f6" value="o">
+                    <input type="text" maxlength="1" class="fingerKeyInput f7" value="p">
+                    <input type="text" maxlength="1" class="fingerKeyInput f8" value="[">
+                    <input type="text" maxlength="1" class="fingerKeyInput f9" value="]">
+                    <input type="text" maxlength="1" class="fingerKeyInput lshift" value="e">
+                    <input type="text" maxlength="1" class="fingerKeyInput rshift" value="q">
+                    <img src="../img/rightHand.png" alt="" class="handImg">
+                </div>
             </div>
-            <div class="line a">
-                <div class="key a">a do</div>
-                <div class="key s">s re</div>
-                <div class="key d">d mi</div>
-                <div class="key f">f fa</div>
-                <div class="key g">g so</div>
-                <div class="key h">h la</div>
-                <div class="key j">j xi</div>
-            </div>
-            <div class="line z">
-                <div class="key z">z</div>
-                <div class="key x">x</div>
-                <div class="key c">c</div>
-                <div class="key v">v</div>
-                <div class="key b">b</div>
-                <div class="key n">n</div>
-                <div class="key m">m</div>
+            <div id="keys_genshin" style="display: none;">
+                <div class="line q">
+                    <div class="key q">q</div>
+                    <div class="key w">w</div>
+                    <div class="key e">e</div>
+                    <div class="key r">r</div>
+                    <div class="key t">t</div>
+                    <div class="key y">y</div>
+                    <div class="key u">u</div>
+                </div>
+                <div class="line a">
+                    <div class="key a">a</div>
+                    <div class="key s">s</div>
+                    <div class="key d">d</div>
+                    <div class="key f">f</div>
+                    <div class="key g">g</div>
+                    <div class="key h">h</div>
+                    <div class="key j">j</div>
+                </div>
+                <div class="line z">
+                    <div class="key z">z</div>
+                    <div class="key x">x</div>
+                    <div class="key c">c</div>
+                    <div class="key v">v</div>
+                    <div class="key b">b</div>
+                    <div class="key n">n</div>
+                    <div class="key m">m</div>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 </body>
+
 </html>
 <!-- <script src="../js/preventDefaultKey.js"></script>
 <script src="../js/tools.js"></script>

@@ -31,6 +31,9 @@ body {
   background-color: black;
   color: greenyellow;
 }
+.settings input {
+  font-family: "JetBrains Mono", "Fira Mono", "Fira Code", sans-serif;
+}
 .settings #keys_twohands .leftHand,
 .settings #keys_twohands .rightHand {
   position: absolute;
