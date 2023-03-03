@@ -1,5 +1,6 @@
 import HandLocation from "./HandLocation.js";
 import Note from "./Note.js";
+import config from "./config.js";
 
 /**
  * 钢琴类单例
@@ -144,7 +145,9 @@ class Piano {
             note.changeMode(this.mood);
         }
         // 转调完成
-        let audio = new Audio(`../audio/${note.fileName()}.mp3`);
+        let path = `../../audio/${$("#source").value}/${note.fileName()}.mp3`;
+        console.log(path);
+        let audio = new Audio(path);
         audio.play().then((r) => {});
         // 钢琴键盘渲染
         this.nameToEleDic[note.fileName()].classList.add("keyDown");
@@ -169,6 +172,10 @@ class Piano {
      * 更新设置
      */
     refreshSettings() {
+        $("#source").innerHTML = "";
+        for (let source of config.sources) {
+            $("#source").innerHTML += `<option>${source}</option>`;
+        }
         this.fingerToKey = {};
         this.keyToName = {};
         if ($("#keybind").value === "twohands") {
