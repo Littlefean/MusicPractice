@@ -40,7 +40,7 @@ jobs:
           rollup ./js/piano/pianoPage.js --file ./js/piano/bundle.js
       - name: 修改 js 引用路径
         run: |
-          sed "s/pianoPage/bundle/g" ./html/piano.html
+          sed -i "s/pianoPage/bundle/g" ./html/piano.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
