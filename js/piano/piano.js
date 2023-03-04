@@ -1,6 +1,5 @@
 import HandLocation from "./HandLocation.js";
 import Note from "./Note.js";
-import config from "./config.js";
 
 /**
  * 钢琴类单例
@@ -179,10 +178,6 @@ class Piano {
      * 更新设置
      */
     refreshSettings() {
-        $("#source").innerHTML = "";
-        for (let source of config.sources) {
-            $("#source").innerHTML += `<option>${source}</option>`;
-        }
         this.fingerToKey = {};
         this.keyToName = {};
         if ($("#keybind").value === "twohands") {
@@ -271,6 +266,23 @@ class Piano {
         this.keyToName[this.fingerToKey["r9"]] = handNote
             .moveWhite(6)
             .fileName();
+    }
+
+    /**
+     * 缓存mp3文件
+     */
+    cache() {
+        let path = `../audio/${$("#source").value}/`;
+        let prom = [];
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= 18; j++) {
+                prom.push(new Promise((resolve) => {
+                    new Audio(`${path}${i}_${j < 10 ? `0${j}` : j}.mp3`);
+                    resolve();
+                }));
+            }
+        }
+        Promise.all(prom).then(() => console.log("缓存成功"));
     }
 }
 
