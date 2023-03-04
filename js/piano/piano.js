@@ -274,13 +274,13 @@ class Piano {
     cache() {
         let path = `../audio/${$("#source").value}/`;
         let prom = [];
-        for (let i = 1; i <= 5; i++) {
-            for (let j = 1; j <= 18; j++) {
-                prom.push(new Promise((resolve) => {
+        for (let i of Note.whiteArr) {
+            prom.push(
+                new Promise((resolve) => {
                     new Audio(`${path}${i}_${j < 10 ? `0${j}` : j}.mp3`);
                     resolve();
-                }));
-            }
+                })
+            );
         }
         Promise.all(prom).then(() => console.log("缓存成功"));
     }
