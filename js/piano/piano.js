@@ -277,7 +277,7 @@ class Piano {
         for (let i of Note.whiteArr) {
             prom.push(
                 new Promise((resolve) => {
-                    new Audio(`${path}${i}_${j < 10 ? `0${j}` : j}.mp3`);
+                    new Audio(`${path}${i}.mp3`);
                     resolve();
                 })
             );
