@@ -6,10 +6,11 @@ import Piano from "./Piano.js";
  * by shikukuya
  */
 class GenshinParser {
+    // prettier-ignore
     static keys = [
         "q", "w", "e", "r", "t", "y", "u",
         "a", "s", "d", "f", "g", "h", "j",
-        "z", "x", "c", "v", "b", "n", "m"
+        "z", "x", "c", "v", "b", "n", "m",
     ]
 
     /**
@@ -65,7 +66,6 @@ class GenshinParser {
             }
             for (let char in line) {
                 if (char.match(/[a-z]/)) {
-                    
                 }
             }
         }
