@@ -138,6 +138,12 @@ class Piano {
      * @param e {KeyboardEvent}
      */
     play(e) {
+        console.log(e.key);
+        $(`#keys_genshin .key.${e.key}`).classList.add("animate");
+        $(`#keys_genshin .key.${e.key}`).classList.add("pressed");
+        setTimeout(() => {
+            $(`#keys_genshin .key.${e.key}`).classList.remove("animate");
+        }, 600);
         // 音频播放
         let note = Note.eval(this.keyToName[e.key]);
         // 加入转调
@@ -158,6 +164,7 @@ class Piano {
      * @param e {KeyboardEvent}
      */
     rendByKeyUp(e) {
+        $(`#keys_genshin .key.${e.key}`).classList.remove("pressed");
         // 特效渲染
         // $(`.keyCode-${e.code}`).classList.remove("keyboardDown");
         let note = Note.eval(this.keyToName[e.key]);

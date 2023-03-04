@@ -5,6 +5,18 @@
   color: greenyellow;
 }
 
+.init_animation() {
+    @keyframes keypress {
+        100% {
+            width: 5.7em;
+            height: 5.7em;
+            border-color: transparent;
+        }
+    }
+}
+
+.init_animation();
+
 // 设置面板
 .settings {
   width: 90%;
@@ -199,19 +211,49 @@
 
     .line {
       display: flex;
-      margin: 1em 0;
+      margin: 0.7em 0;
 
       .key {
-        width: 5em;
-        height: 5em;
-        background-color: #eee;
+        width: 4em;
+        height: 4em;
+        background-color: #fff9ef;
         color: #000;
-        margin: 0 1em;
+        margin: 0 0.7em;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
+        position: relative;
+        transition: all 0.3s;
+
+        &::after {
+            // 里面的圈
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            width: 3.3em;
+            height: 3.3em;
+            border: 3px solid #e2dfd5;
+        }
+
+        &::before {
+            // 外面的圈
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            width: 3.3em;
+            height: 3.3em;
+            border: 3px solid #e2dfd5;
+        }
+
+        &.animate::before {
+            animation: keypress 0.6s;
+        }
+
+        &.pressed {
+            filter: invert(80%);
+        }
       }
     }
   }
