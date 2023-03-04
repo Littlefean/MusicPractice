@@ -1,5 +1,6 @@
 import Piano from "./piano.js";
 import preventInit from "./preventDefaultKey.js";
+import config from "./config.js";
 
 /**
  *
@@ -23,4 +24,10 @@ window.onload = function () {
         piano.refreshSettings();
         piano.pageInit();
     };
+    $("#source").innerHTML = "";
+    for (let source of config.sources) {
+        $("#source").innerHTML += `<option>${source}</option>`;
+    }
+    $("#source").onchange = piano.cache;
+    piano.cache();
 }
