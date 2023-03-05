@@ -41,6 +41,7 @@
             </div>
         </div>
         <div class="settings">
+            <button id="autoplay">原琴自动弹奏</button>
             调式：
             <select name="" id="mode">
                 <option value="C">C</option>
@@ -125,6 +126,15 @@
             </div>
         </div>
     </main>
+    <dialog id="autoplay_dlg">
+        <textarea name="" id="" cols="30" rows="10" class="input" placeholder="在这里输入原琴脚本谱..."></textarea>
+        <br />
+        <span class="error">提示 原琴脚本语法没有规定，所以这个功能只支持部分脚本</span>
+        <br />
+        <button class="close">关闭</button>
+        <button class="start">开始弹奏！</button>
+        <button class="stop">停！</button>
+    </dialog>
 </body>
 
 </html>

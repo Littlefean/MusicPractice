@@ -21,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "HYWenHei 85W", "黑体", sans-serif;
+  font-family: "HYWenHei 85W", sans-serif;
 }
 .keyboardDown {
   transform: translateY(10px);
@@ -36,6 +36,13 @@ body h1 {
   color: #9cdcfe;
   font-size: 40px;
   font-family: "JetBrains Mono", "Fira Mono", "Fira Code", sans-serif;
+}
+body button,
+body input,
+body textarea,
+body dialog {
+  background-color: #222;
+  color: #fff;
 }
 body main {
   width: 90%;

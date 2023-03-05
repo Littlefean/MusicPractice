@@ -11,35 +11,118 @@ class GenshinParser {
         "z", "x", "c", "v", "b", "n", "m",
     ]
     static maps = {
-        q: { type: 3, note: 1 },
-        w: { type: 3, note: 2 },
-        e: { type: 3, note: 3 },
-        r: { type: 3, note: 4 },
-        t: { type: 3, note: 5 },
-        y: { type: 3, note: 6 },
-        u: { type: 3, note: 7 },
+        q: { type: 3, note: 1, key: "q", file: "4_01" },
+        w: { type: 3, note: 2, key: "w", file: "4_03" },
+        e: { type: 3, note: 3, key: "e", file: "4_05" },
+        r: { type: 3, note: 4, key: "r", file: "4_06" },
+        t: { type: 3, note: 5, key: "t", file: "4_08" },
+        y: { type: 3, note: 6, key: "y", file: "4_10" },
+        u: { type: 3, note: 7, key: "u", file: "4_12" },
 
-        a: { type: 2, note: 1 },
-        s: { type: 2, note: 2 },
-        d: { type: 2, note: 3 },
-        f: { type: 2, note: 4 },
-        g: { type: 2, note: 5 },
-        h: { type: 2, note: 6 },
-        j: { type: 2, note: 7 },
+        a: { type: 2, note: 1, key: "a", file: "3_01" },
+        s: { type: 2, note: 2, key: "s", file: "3_03" },
+        d: { type: 2, note: 3, key: "d", file: "3_05" },
+        f: { type: 2, note: 4, key: "f", file: "3_06" },
+        g: { type: 2, note: 5, key: "g", file: "3_08" },
+        h: { type: 2, note: 6, key: "h", file: "3_10" },
+        j: { type: 2, note: 7, key: "j", file: "3_12" },
 
-        z: { type: 1, note: 1 },
-        x: { type: 1, note: 2 },
-        c: { type: 1, note: 3 },
-        v: { type: 1, note: 4 },
-        b: { type: 1, note: 5 },
-        n: { type: 1, note: 6 },
-        m: { type: 1, note: 7 },
+        z: { type: 1, note: 1, key: "z", file: "2_01" },
+        x: { type: 1, note: 2, key: "x", file: "2_03" },
+        c: { type: 1, note: 3, key: "c", file: "2_05" },
+        v: { type: 1, note: 4, key: "v", file: "2_06" },
+        b: { type: 1, note: 5, key: "b", file: "2_08" },
+        n: { type: 1, note: 6, key: "n", file: "2_10" },
+        m: { type: 1, note: 7, key: "m", file: "2_12" },
     };
+
+    /**
+     * 播放json琴谱
+     * @param {object} data json琴谱
+     * @param {boolean} animate 是否播放按键动画，默认true
+     * @returns {number[]} timeouts列表
+     */
+    static play(data, animate = true) {
+        let timeouts = [];
+        let inv_ms = data.inv * 1000;
+        /**
+         * 这个n得从0开始，否则第一个音符有延迟
+         */
+        let n = 0;
+        for (let note of data.data) {
+            if (note instanceof Array) {
+                // 括号里面视为单个音符
+                for (let note_paren of note) {
+                    if (note_paren !== null) {
+                        timeouts.push(
+                            setTimeout(() => {
+                                new Audio(
+                                    `../audio/${$("#source").value}/${
+                                        note_paren.file
+                                    }.mp3`
+                                ).play();
+                                if (animate) {
+                                    $(
+                                        `#keys_genshin .key.${note_paren.key}`
+                                    ).classList.add("animate");
+                                    $(
+                                        `#keys_genshin .key.${note_paren.key}`
+                                    ).classList.add("pressed");
+                                    setTimeout(() => {
+                                        $(
+                                            `#keys_genshin .key.${note_paren.key}`
+                                        ).classList.remove("animate");
+                                    }, 600);
+                                    setTimeout(() => {
+                                        $(
+                                            `#keys_genshin .key.${note_paren.key}`
+                                        ).classList.remove("pressed");
+                                    }, 150);
+                                }
+                            }, inv_ms * n)
+                        );
+                    }
+                }
+            } else {
+                if (note !== null) {
+                    timeouts.push(
+                        setTimeout(() => {
+                            new Audio(
+                                `../audio/${$("#source").value}/${
+                                    note.file
+                                }.mp3`
+                            ).play();
+                            if (animate) {
+                                $(
+                                    `#keys_genshin .key.${note.key}`
+                                ).classList.add("animate");
+                                $(
+                                    `#keys_genshin .key.${note.key}`
+                                ).classList.add("pressed");
+                                setTimeout(() => {
+                                    $(
+                                        `#keys_genshin .key.${note.key}`
+                                    ).classList.remove("animate");
+                                }, 600);
+                                setTimeout(() => {
+                                    $(
+                                        `#keys_genshin .key.${note.key}`
+                                    ).classList.remove("pressed");
+                                }, 150);
+                            }
+                        }, inv_ms * n)
+                    );
+                }
+            }
+            n++;
+        }
+        return timeouts;
+    }
 
     /**
      * 解析原琴脚本谱
      * @param {string} data 要解析的脚本谱
-     * @returns {object}
+     * @returns {string|object} json琴谱，或者错误信息
      */
     static parse(data) {
         let n = 1;
@@ -83,7 +166,6 @@ class GenshinParser {
         let result = { inv: 0.33, data: [] };
         data = data.toLowerCase();
         for (let line of data.split("\n")) {
-            console.log(n, line);
             if (n === 1) {
                 // 第一行
                 if (line.startsWith("bpm")) {
@@ -96,7 +178,6 @@ class GenshinParser {
             }
             if (n > 1) {
                 for (let char of line) {
-                    debugger;
                     if (["+", "-", "["].includes(char)) {
                         return `未实现的语法 行${n}`;
                     }
@@ -135,6 +216,7 @@ class GenshinParser {
             }
             n++;
         }
+        console.log(result);
         return result;
     }
 }

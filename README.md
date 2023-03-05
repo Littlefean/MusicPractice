@@ -17,3 +17,10 @@
 难度进阶可能会有和弦。
 
 还有模拟钢琴弹奏功能。均由 js 实现。
+
+## 原琴解析器，播放器原理
+
+<details>
+    <summary>地狱绘图警告，点我展开</summary>
+    <img src="https://img1.imgtp.com/2023/03/05/9YZwSGHB.png" alt="1.png" title="1.png" />
+</details>
