@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>音程猜谜游戏</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2b2b2b;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .game-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .game-controls input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .game-controls button {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .game-controls button:hover,
+        .game-controls button:focus {
+            background-color: #0069d9;
+            outline: none;
+        }
+
+        .guess-input {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .guess-input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .alert {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: #fff;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .alert-danger {
+            background-color: #dc3545;
+        }
+
+    </style>
+</head>
+<body>
+<h1>音程猜谜游戏</h1>
+
+<br>
+
+<button id="start-button">开始游戏</button>
+
+<audio id="audio-player1" controls></audio>
+<span class="firstNote"></span>
+<audio id="audio-player2" controls></audio>
+<input class="userAnswer" type="text" placeholder="请输入猜测的音符">
+<button id="test-btn">验证</button>
+<script src="game.js"></script>
+</body>
+</html>
