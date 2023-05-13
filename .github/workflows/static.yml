@@ -37,7 +37,7 @@ jobs:
           npm i rollup -g
       - name: 打包
         run: |
-          rollup ./js/piano/pianoPage.js --file ./js/piano/bundle.js
+          rollup ./js/piano/pianoPage.js --file ./js/piano/bundle.js    
       - name: 修改 js 引用路径
         run: |
           sed -i "s/pianoPage/bundle/g" ./html/piano.html
