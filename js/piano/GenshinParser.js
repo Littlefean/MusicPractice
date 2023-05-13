@@ -178,9 +178,6 @@ class GenshinParser {
             }
             if (n > 1) {
                 for (let char of line) {
-                    if (["+", "-", "["].includes(char)) {
-                        return `未实现的语法 行${n}`;
-                    }
                     if ([" ", "0", "="].includes(char)) {
                         // 停一拍
                         if (paren) {
@@ -215,6 +212,9 @@ class GenshinParser {
                 }
             }
             n++;
+        }
+        if (isNaN(result.inv)) {
+            return "bpm获取失败 行1"
         }
         console.log(result);
         return result;
