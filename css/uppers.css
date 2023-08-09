@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #1e1e1e;
+  color: whitesmoke;
+}
+.upList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.upCard {
+  outline: solid 1px;
+  padding: 5px;
+  flex: 0 0 calc(25% - 10px);
+  /* 卡片宽度为父容器宽度的四分之一，并考虑间距 */
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #2b2b2b;
+}
+.upCard:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px gray;
+}
+.upCard h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.upCard p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.upCard .tag {
+  color: orangered;
+}
+.upCard p.boy {
+  color: #41c9e1;
+}
+.upCard p.girl {
+  color: hotpink;
+}
+/*# sourceMappingURL=uppers.css.map */

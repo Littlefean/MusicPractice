@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/uppers.css">
+</head>
+<body>
+<h1>音乐区UP主推荐</h1>
+<main>
+
+</main>
+
+</body>
+<script src="../js/tools.js"></script>
+<!--临近原则，就在这里写一下静态数据了-->
+<script>
+    const arr = [
+        {
+            uid: '1855757743',
+            software: ['库乐队'],
+            content: ['编曲创作', '英雄联盟'],
+            tags: [],
+            gender: false,
+        },
+        {
+            uid: '474036685',
+            software: ['库乐队', 'FL'],
+            content: ['编曲创作'],
+            tags: ['网易音乐人'],
+            gender: true,
+        },
+        {
+            uid: '540033005',
+            software: ['库乐队', 'Medly'],
+            content: ['编曲创作'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '1191202887',
+            software: ['库乐队'],
+            content: ['编曲创作'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '402631059',
+            software: ['库乐队'],
+            content: ['编曲创作', '游戏'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '529207208',
+            software: ['Medly'],
+            content: ['编曲创作'],
+            tags: [],
+            gender: false,
+        },
+        {
+            uid: '625811977',
+            software: ['Medly'],
+            content: ['编曲创作'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '340420556',
+            software: ['FL'],
+            content: ['编曲创作'],
+            tags: ['网易音乐人'],
+            gender: true,
+        },
+        {
+            uid: '581735259',
+            software: ['FL'],
+            content: ['编曲创作'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '548905372',
+            software: ['Medly'],
+            content: ['编曲创作'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '12724008',
+            software: ['AE'],
+            content: ['MC音效创作'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '403624999',
+            software: ['Cubase'],
+            content: ['专业流行音乐编曲'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '421012805',
+            software: ['Cubase'],
+            content: ['配乐编曲'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '311671229',
+            software: [],
+            content: ['交响音乐整活'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '306224116',
+            software: ['库乐队'],
+            content: ['编曲创作', '游戏'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '3493111852436046',
+            software: ['库乐队'],
+            content: ['电影音乐'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '199443546',
+            software: ['五线谱'],
+            content: ['钢琴音乐创作'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '1412778627',
+            software: ['LMMS'],
+            content: ['赋格音乐'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '11178954',
+            software: ['？'],
+            content: ['赋格音乐'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '393587131',
+            software: [],
+            content: ['西方音乐转载'],
+            tags: [],
+            gender: false,
+        },
+        {
+            uid: '3493094045517827',
+            software: [],
+            content: ['五线谱'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '3494370439333970',
+            software: [],
+            content: ['五线谱整活'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '3493127690128130',
+            software: [],
+            content: ['五线谱整活'],
+            tags: [],
+            gender: true,
+        },
+        {
+            uid: '70465247',
+            software: ['吉他'],
+            content: ['吉他演奏'],
+            tags: [],
+            gender: false,
+        },
+        {
+            uid: '606349341',
+            software: ['StudioOne'],
+            content: ['编曲教学'],
+            tags: [],
+            gender: true,
+        }
+
+    ];
+    const content = div('upList');
+    for (let item of arr) {
+        const card = document.createElement('div');
+        card.className = 'upCard';
+        let tagsHTML = ''; // 存储标签的 HTML
+
+        if (item.tags.length > 0) {
+            tagsHTML = `<p class="tag">标签：${item.tags.join(', ')}</p>`;
+        }
+
+        let softwareHTML = ''; // 存储软件使用的 HTML
+
+        if (item.software.length > 0) {
+            softwareHTML = `<p>软件使用：${item.software.join(', ')}</p>`;
+        }
+
+        card.innerHTML = `
+        <h1>${item.content.join(' + ')}</h1>
+        ${softwareHTML}
+        ${tagsHTML}
+        <p class=${item.gender ? 'boy' : 'girl'}>${item.gender ? '♂' : '♀'}</p>
+    `;
+
+        card.addEventListener('click', function() {
+            window.open(`https://space.bilibili.com/${item.uid}`);
+        });
+
+        content.appendChild(card);
+    }
+    $('main').appendChild(content);
+</script>
+</html>
